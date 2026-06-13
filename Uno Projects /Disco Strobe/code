@@ -1,0 +1,23 @@
+// Disco Strobe - onboard LED pin 13
+// Simulates a classic strobe light with
+// rapid bursts, pauses, and speed changes
+
+#define LED 13
+
+void strobe(int onTime, int offTime, int count) {
+  for (int i = 0; i < count; i++) {
+    digitalWrite(LED, HIGH);
+    delay(onTime);
+    digitalWrite(LED, LOW);
+    delay(offTime);
+  }
+}
+
+void setup() {
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  // Fast burst - classic strobe
+  strobe(20, 30, 12);
+  delay(200);
