@@ -1,1 +1,40 @@
+// Police siren flash pattern
+// Uses only the onboard LED on pin 13 - no extra parts needed
 
+#define LED 13
+
+void flash(int times, int onTime, int offTime) {
+  for (int i = 0; i < times; i++) {
+    digitalWrite(LED, HIGH);
+    delay(onTime);
+    digitalWrite(LED, LOW);
+    delay(offTime);
+  }
+}
+
+void setup() {
+  pinMode(LED, OUTPUT);
+  
+}void loop() {
+  // Rapid blue flash (3 quick bursts)
+  flash(3, 60, 60);
+  delay(100);
+
+  // Rapid red flash (3 quick bursts)
+  flash(3, 60, 60);
+  delay(100);
+
+  // Hold on (long sweep)
+  digitalWrite(LED, HIGH);
+  delay(200);
+  digitalWrite(LED, LOW);
+  delay(80);
+
+  // Hold on again
+  digitalWrite(LED, HIGH);
+  delay(200);
+  digitalWrite(LED, LOW);
+
+  // Pause between cycles
+  delay(300);
+}
