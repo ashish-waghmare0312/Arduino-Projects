@@ -1,0 +1,26 @@
+// Heartbeat pattern - double blink like a real heartbeat
+// No extra components needed - uses onboard LED on pin 13
+
+#define LED 13
+
+void pulse() {
+  // First beat (lub)
+  digitalWrite(LED, HIGH);
+  delay(80);
+  digitalWrite(LED, LOW);
+  delay(80);
+
+  // Second beat (dub)
+  digitalWrite(LED, HIGH);
+  delay(80);
+  digitalWrite(LED, LOW);
+}
+
+void setup() {
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  pulse();
+  delay(700); // pause between heartbeats (~75 BPM)
+}
