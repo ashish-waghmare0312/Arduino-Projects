@@ -21,3 +21,28 @@ void loop() {
   // Fast burst - classic strobe
   strobe(20, 30, 12);
   delay(200);
+
+
+  // Double flash pattern
+  strobe(15, 15, 2);
+  delay(80);
+  strobe(15, 15, 2);
+  delay(80);
+  strobe(15, 15, 2);
+  delay(300);
+
+  // Slow dramatic flashes
+  strobe(60, 120, 4);
+  delay(150);
+
+  // Rapid fire build-up
+  strobe(10, 40, 5);
+  strobe(10, 30, 5);
+  strobe(10, 20, 5);
+  strobe(10, 10, 8);
+  delay(400);
+
+  // Triple hit
+  strobe(25, 25, 3);
+  delay(500);
+}
